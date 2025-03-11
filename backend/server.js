@@ -10,6 +10,9 @@ app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 
 app.use('/ai', aiRoute)
+app.get('/', (req, res)=> {
+    res.send('Hello World')
+})
 
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
