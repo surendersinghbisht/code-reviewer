@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+/* Desktop View (Default) */
+main .left,
+main .right {
+  height: 100%;
+  flex-basis: 50%;
+  border-radius: 0.7rem;
+}
+
+main .left {
+  background-color: #000000;
+  position: relative;
+}
+
+.left .code,
+.code pre,
+.code pre code {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  border-radius: 0.7rem;
+  background-color: #0c0c0c;
+}
+
+main .left .review {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: rgb(219, 219, 255);
+  color: #000000;
+  padding: 0.5rem 2rem;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 0.7rem;
+}
+
+main .right {
+  background-color: #343434;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  overflow: auto;
+}
+
+/* Mobile View: Stack left & right on top of each other */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column; /* Stack elements vertically */
+  }
+
+  main .left,
+  main .right {
+    flex-basis: auto; /* Allow sections to take natural height */
+    height: 50vh; /* Make each take half the screen */
+    width: 100%;
+  }
+
+  main .left .review {
+    bottom: 0.5rem;
+    right: 50%;
+    transform: translateX(50%);
+    width: auto;
+    padding: 0.5rem 1.5rem;
+  }
+}
+
+/* Smaller Mobile Screens */
+@media (max-width: 480px) {
+  main .left,
+  main .right {
+    height: 45vh; /* Adjust for smaller devices */
+  }
+
+  main .right {
+    font-size: 1.2rem;
+    padding: 0.7rem;
+  }
+
+  main .left .review {
+    font-size: 0.9rem;
+    padding: 0.4rem 1rem;
+  }
+}
+
