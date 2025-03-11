@@ -24,7 +24,7 @@ const[loading, setLoading] = useState(false)
 
   async function reviewCode() {
     setLoading(true)
-    const response = await axios.post('http://localhost:3000/ai/get-response', { code })
+    const response = await axios.post('https://code-reviewer-blue.vercel.app/ai/get-response', { code })
     setReview(response.data)
     setLoading(false)
   }
