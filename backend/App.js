@@ -9,7 +9,7 @@ app.get('/ais', (req, res)=> {
     res.send('AI')
 })
 
-app.get('/sample', (req, res)=> {
-    res.send('sample')
+app.get('/new', (req, res)=> {
+    res.send('new')
 })
 module.exports = app
