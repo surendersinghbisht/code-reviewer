@@ -8,4 +8,8 @@ app.get('/', (req, res)=> {
 app.get('/ais', (req, res)=> {
     res.send('AI')
 })
+
+app.get('/sample', (req, res)=> {
+    res.send('sample')
+})
 module.exports = app
